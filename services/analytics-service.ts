@@ -162,11 +162,11 @@ export class AnalyticsService implements IAnalyticsService {
 		var userAgentString: string;
 		var osType = os.type();
 		if(osType === "Windows_NT") {
-			userAgentString = "(Windows NT " + os.release() + ")";
+			userAgentString = "(Windows NT " + os.release() + "; nodejs " + process.version  + ")";
 		} else if(osType === "Darwin") {
-			userAgentString = "(Mac OS X " + os.release() + ")";
+			userAgentString = "(Mac OS X " + os.release() + "; nodejs " + process.version + ")";
 		} else {
-			userAgentString = "(" + osType +")";
+			userAgentString = "(" + osType + "; nodejs " + process.version +")";
 		}
 
 		return userAgentString;
